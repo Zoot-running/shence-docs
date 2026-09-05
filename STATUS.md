@@ -26,5 +26,11 @@
 ## 下一步（按 TESTING.md）
 
 1. ~~跨项目 L2 端到端合练~~ ✅ 完成（4/4 done + replayOk；过程中修复虎符派单循环与集思按次模型路由两个真实缺陷）。
-2. L4 真实验收（进行中：用户已提供 tsecbench token，构建自主 runner）。
+2. L4 真实验收（**进行中**：run 15309 / Cybench set 5 / 40 题 20800 分，xiaochang-runner 自主跑分，run_id 见平台）。
 3. 最终迁移：生产实例升级到同版本 + 安装四插件。
+
+## 模型调度增补（2026-09-05，v1.1 已实现并实测）
+
+- 集思 DispatchOptions 增加 `reasoningEffort`（off/low/high/max）：按次指定思考强度，经 `agentOptions.reasoningEffort` 透传（flash/pro 之分由 model 承载）。
+- llm-openai-compat 路由增加 thinking 配置：effort id → 提供方私有 wire 参数（glm-4.6 `thinking: {type}` 实测 PONG 通过）。
+- 虎符工作项增加 `reasoningEffort`；校场 runner 按难度×轮次调度（easy/medium→kimi-k2.6，hard→glm-4.6+max，第 2 轮起升级 effortRetry）。
