@@ -8,3 +8,4 @@
 - ADR-003 金柝告警事件与恢复分工
 - ADR-004 夜不收经验库格式与自积累管线
 - [ADR-002 集思派单通道最小契约](002-jisi-channel-contract.md) ✅ 已接受
+- [ADR-001 虎符调度核心契约](001-hufu-scheduler-contract.md) ✅ 已接受
