@@ -24,11 +24,18 @@ delegate(work, opts?) → ChildRef
   }
   opts: {
     model?: string        # 按次指定模型（缺省=默认模型）
-    provider?: string     # 可选 provider 覆盖
+    provider?: string     # 可选 provider 覆盖（缺省按 model 反查宿主路由）
+    reasoningEffort?: string  # 按次思考强度（off/low/high/max 等，adapter 自有语义；
+                              # 2026-09-05 增补：经 agentOptions.reasoningEffort 透传）
     background?: boolean  # 后台执行（默认 true，durable 子代理）
   }
   ChildRef: { id: string }  # durable 子代理 id（可 send_message 续聊）
 ```
+
+> 增补说明（2026-09-05，v1.1）：模型调度不止"换模型"，还包括**思考强度**维度
+> （flash/pro 之分由 model 承载；effort 由 reasoningEffort 承载）。宿主绑定把
+> reasoningEffort 写入 `agentOptions.reasoningEffort`；llm-openai-compat 按路由
+> 的 thinking 配置把 effort id 映射为提供方私有 wire 参数（如 Zhipu `thinking`）。
 
 ### 2. collect —— 收结果
 ```
