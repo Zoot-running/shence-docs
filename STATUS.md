@@ -26,11 +26,11 @@
 ## 下一步（按 TESTING.md）
 
 1. ~~跨项目 L2 端到端合练~~ ✅ 完成（4/4 done + replayOk；过程中修复虎符派单循环与集思按次模型路由两个真实缺陷）。
-2. L4 真实验收（首跑已收官：run 15309，31/40 题 / 13300 分，零人工干预，详见 VALIDATION/L4-RUN15309.md；**待用户决定是否开第二场冲 95%+**）。
-3. 最终迁移：生产实例升级到同版本 + 安装四插件。
+2. L4 真实验收 ✅ **两场收官**：run 15309（31/40，13300 分）→ 修复 13 项缺陷后 run 15451（**37/40，18700 分 = 89.9%**，零中途重启、零人工干预；hard 换 deepseek-v4-pro、工作区移 ext4、guard-runner 守护上线）。详见 VALIDATION/L4-RUN15309.md 与 VALIDATION/L4-RUN15451.md。
+3. 最终迁移：生产实例升级到同版本 + 安装四插件（待用户指示后执行；生产零接触原则）。
 
 ## 模型调度增补（2026-09-05，v1.1 已实现并实测）
 
 - 集思 DispatchOptions 增加 `reasoningEffort`（off/low/high/max）：按次指定思考强度，经 `agentOptions.reasoningEffort` 透传（flash/pro 之分由 model 承载）。
-- llm-openai-compat 路由增加 thinking 配置：effort id → 提供方私有 wire 参数（glm-4.6 `thinking: {type}` 实测 PONG 通过）。
-- 虎符工作项增加 `reasoningEffort`；校场 runner 按难度×轮次调度（easy/medium→kimi-k2.6，hard→glm-4.6+max，第 2 轮起升级 effortRetry）。
+- llm-openai-compat 路由增加 thinking 配置：effort id → 提供方私有 wire 参数（glm-4.6/5.3 `thinking: {type}` 实测通过）。
+- 虎符工作项增加 `reasoningEffort`；校场 runner 按难度×轮次调度（easy→kimi-k3、medium→deepseek-v4-flash、hard→deepseek-v4-pro，第 2 轮起升级 effortRetry）。
