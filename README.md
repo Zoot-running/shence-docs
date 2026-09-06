@@ -6,7 +6,7 @@
 - [shence-hufu](https://github.com/Zoot-running/shence-hufu) 虎符 · 并行调度（DSH 插件）
 - [shence-jintuo](https://github.com/Zoot-running/shence-jintuo) 金柝 · 守护启动器（父进程+DSH 补丁）
 - [shence-jisi](https://github.com/Zoot-running/shence-jisi) 集思 · 多模型思考（DSH 插件）
-- [shence-yebushou](https://github.com/Zoot-running/shence-yebushou) 夜不收 · 渗透 skill（分支 ctf = 校场）
+- [shence-yebushou](https://github.com/Zoot-running/shence-yebushou) 夜不收 · 渗透 skill（分支 xiaochang = 校场）
 
 ## 目录
 

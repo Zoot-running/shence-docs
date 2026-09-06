@@ -7,7 +7,7 @@
 | 集思 | shence-jisi | ✅ 15 | ✅ 实测（按次模型/多模型并行/模型清单，Kimi+智谱真调） | — | 收官 |
 | 虎符 | shence-hufu | ✅ 20 | ✅ 实测（双模型迷你战役，done/failed 双路径） | — | 收官 |
 | 金柝 | shence-jintuo | —（bash） | ✅ 告警插件实测（模型经 jintuo_alerts 读告警） | ✅ 3/3（杀进程 ~44-51s 自动恢复+告警/证据记录） | 收官 |
-| 夜不收 | shence-yebushou | ✅ 15（main 画像 6 + ctf 适配器/hint 账本/治理 9） | ✅ skill 实测（模型调用并正确执行技能） | — | 收官 |
+| 夜不收 | shence-yebushou | ✅ 15（main 画像 6 + xiaochang 适配器/hint 账本/治理 9） | ✅ skill 实测（模型调用并正确执行技能） | — | 收官 |
 | 跨项目 L2 | hufu×jisi | — | ✅ 4/4 done + replayOk（详见 VALIDATION/L2-HUFU-JISI-E2E.md） | — | 收官 |
 
 ## 环境

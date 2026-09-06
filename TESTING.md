@@ -59,7 +59,7 @@
 | L3 | 混沌测试 | dev 实例（随便杀） | 故意 kill dev web / 注入内存压力 → 验证金柝拉起+恢复、虎符账本回放、**生产实例全程无恙** | 每仓验收 |
 | L4 | 真实验收 | 真实 tsecbench（用户 token） | 一次 6h run，预算内 ≥95% 且零人工干预；clean-room 扫描通过 | 最终一次 |
 
-- L1 的平台 mock：yebushou@ctf 的适配器配套夹具，录制自三个 run 的真实交互（题单/start/submit/close 响应全有）。
+- L1 的平台 mock：yebushou@xiaochang 的适配器配套夹具，录制自三个 run 的真实交互（题单/start/submit/close 响应全有）。
 - L2/L4 消耗真实 DeepSeek API 额度：默认用最便宜模型、每用例 token 上限、花费记入 dev 日志；**建议每日预算上限（待用户确认，默认 ¥X/天）**。
 - L3 是"保证我不能崩"的直接验证：把 dev 实例杀掉 N 次，断言生产会话零影响。
 

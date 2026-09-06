@@ -11,7 +11,7 @@
 | `shence-hufu` | 虎符 P1 | DSH 插件 | 槽位状态机、工作项账本、心跳、恢复协议 |
 | `shence-jintuo` | 金柝 P2 | 独立启动器+补丁 | dsh-daemon 增强版、资源告警、崩溃恢复、DSH patch overlay |
 | `shence-jisi` | 集思 P3 | DSH 插件 | 派单通道（按次模型）、多模型并行收集、主 agent 自换模型门禁 |
-| `shence-yebushou` | 夜不收 P4a（分支 `ctf` = 校场 P4b） | skill | 目标+通用经验+自积累机制；ctf 分支：平台适配器/私知/hint 账本/治理 |
+| `shence-yebushou` | 夜不收 P4a（分支 `xiaochang` = 校场 P4b） | skill | 目标+通用经验+自积累机制；xiaochang 分支：平台适配器/私知/hint 账本/治理 |
 
 ## 各仓 README 骨架（建仓时直接贴）
 
@@ -23,7 +23,7 @@
 - shence-hufu  虎符：并行调度（DSH 插件）
 - shence-jintuo 金柝：守护启动器（父进程+DSH 补丁）
 - shence-jisi  集思：多模型思考（DSH 插件）
-- shence-yebushou 夜不收：渗透 skill（分支 ctf=校场）
+- shence-yebushou 夜不收：渗透 skill（分支 xiaochang=校场）
 ## 文档
 - PROJECTS.md 章程（含依赖图）
 - ADR/ 决策记录
@@ -38,7 +38,7 @@ DSH 插件。给 DSH 会话提供可靠的子代理并行工作管理：
 战役（campaign：工作项清单+并发上限 N+预算+完成口径）、槽位状态机
 （dispatched→probing→求助→stalled→superseded→terminal）、终态去重、
 stall 重派（seed 多样性）、心跳保活、调度级崩溃恢复（账本回放）。
-不感知平台概念（hint 账本/平台 API 在 shence-yebushou@ctf）。
+不感知平台概念（hint 账本/平台 API 在 shence-yebushou@xiaochang）。
 派单：优先经 shence-jisi 通道（按次模型）；无 jisi 回退 DSH 原生 subagent。
 并发上限：N = 用户显式上限 ?? 自动推导（本地性能+模型 API 限制）。
 ```
@@ -69,7 +69,7 @@ DSH 插件。派单通道：派活(工作描述, 模型?, 工具集?)→durable 
 黑盒渗透：目标定义（什么算完成）+ 通用经验 + 组织画像自积累机制
 （skill 只告知"要积累"，画像数据是运行产物、存工作区本地、不随 skill 发布）。
 与虎符/集思：可选受益，不写死依赖（AI/用户选择）。
-分支 ctf = 校场：继承夜不收；CTF 目标说明、本地私知（flag 位置约定/占位 flag
+分支 xiaochang = 校场：继承夜不收；CTF 目标说明、本地私知（flag 位置约定/占位 flag
 纪律/题集风格）、平台适配器（tsecbench openapi+VPN 等）、hint 经济学账本、
 知识治理（clean-room 托管打包+合规扫描+知识资产防火墙）。
 ```
@@ -83,11 +83,11 @@ DSH 插件。派单通道：派活(工作描述, 模型?, 工具集?)→durable 
 | RECOVERY.md（含 daemon 修复记录） | shence-jintuo/docs/ |
 | dsh-daemon.sh 改动、.wslconfig 说明 | shence-jintuo/ |
 | HOSTED-AGENT-PROMPT.md 的调度通用部分（状态机/心跳/去重） | shence-hufu/docs/ |
-| HOSTED-AGENT-PROMPT.md 的渗透/CTF 打法（35 条经验） | shence-yebushou/（ctf 分支再分平台/私知） |
-| public-corpus/（公开资料库） | shence-yebushou@ctf/data/ |
-| SOLUTIONS.md、DEAD-ENDS.md、各 run 报告（含题解/旗值） | shence-yebushou@ctf/local/（本地私知，不进托管打包） |
+| HOSTED-AGENT-PROMPT.md 的渗透/CTF 打法（35 条经验） | shence-yebushou/（xiaochang 分支再分平台/私知） |
+| public-corpus/（公开资料库） | shence-yebushou@xiaochang/data/ |
+| SOLUTIONS.md、DEAD-ENDS.md、各 run 报告（含题解/旗值） | shence-yebushou@xiaochang/local/（本地私知，不进托管打包） |
 | HOSTED-VALIDATION-S1/XBOW-VALIDATION/CYBENCH-VALIDATION.md | shence-docs/VALIDATION/ |
-| ONBOARDING.md、ACCESS.md、challenges-api.md（平台 API 知识） | shence-yebushou@ctf/adapters/tsecbench/ |
+| ONBOARDING.md、ACCESS.md、challenges-api.md（平台 API 知识） | shence-yebushou@xiaochang/adapters/tsecbench/ |
 
 ## 建仓后第一步（各仓顺序）
 
@@ -95,4 +95,4 @@ DSH 插件。派单通道：派活(工作描述, 模型?, 工具集?)→durable 
 2. `shence-hufu`：从验证期协议提炼槽位状态机与账本设计（ADR-001）。
 3. `shence-jisi`：定义通道最小契约（ADR-002，被虎符引用）。
 4. `shence-jintuo`：迁 dsh-daemon 增强与补丁 overlay。
-5. `shence-yebushou`：拆 35 条经验 → 通用（主支）/平台与私知（ctf 分支）。
+5. `shence-yebushou`：拆 35 条经验 → 通用（主支）/平台与私知（xiaochang 分支）。

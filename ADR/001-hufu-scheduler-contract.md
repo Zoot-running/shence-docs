@@ -39,7 +39,7 @@ stalled/failed/blocked/superseded --requeue--> queued（seed+1）
 ## 后果
 
 - 调度逻辑可单测（L0 20 项全绿）、可重放（崩溃恢复）。
-- hint 经济学、平台 API、交卷口径均不在此——它们属 shence-yebushou@ctf（平台特化）。
+- hint 经济学、平台 API、交卷口径均不在此——它们属 shence-yebushou@xiaochang（平台特化）。
 - 派单执行面经软依赖走集思通道；无集思时回退 DSH 原生 subagent。
 
 ## 替代方案
