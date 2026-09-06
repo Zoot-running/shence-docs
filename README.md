@@ -1,4 +1,4 @@
-# shence-docs
+# shence-junji
 神策项目群核心文档存放仓库，包含章程 / ADR / 接口约定 / 验证报告等
 
 ## 仓库地图

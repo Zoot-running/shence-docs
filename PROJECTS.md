@@ -12,7 +12,7 @@
 | P3 | 集思 | shence-jisi | DSH 插件 | 派单通道（按次指定模型/多模型并行出思路）+ 主 agent 自换模型（经用户同意） |
 | P4a | 夜不收 | shence-yebushou | skill | 黑盒渗透的目标 + 通用经验 + 组织画像自积累机制（画像只产出、不内置） |
 | P4b | 校场（分支） | shence-yebushou@xiaochang | skill 分支 | 继承 P4a；CTF 目标、本地私知、平台适配器、hint 账本、知识治理 |
-| — | 神策中枢文档 | shence-docs | 文档仓 | 章程、ADR、跨仓接口约定、验证报告归档 |
+| — | 神策中枢文档 | shence-junji | 文档仓 | 章程、ADR、跨仓接口约定、验证报告归档 |
 
 ## P1 虎符（shence-hufu）—— 并行调度（DSH 插件）
 
@@ -67,4 +67,4 @@ P4 可选受益于 P1/P3（AI/用户选择，非硬依赖）
 1. 派单通道属 P3；P1→P3 为**软依赖**（无 P3 回退 DSH 原生调度）——已验证方案即此回退路径。
 2. 并发上限 N = 用户显式上限 ?? 自动推导（本地性能+模型 API 限制）。
 3. P2 管进程级恢复（拉起+会话存在），P1 管调度级恢复（心跳+未完成工作项）。
-4. 命名定稿：项目群 **神策**；仓库 `shence-hufu` / `shence-jintuo` / `shence-jisi` / `shence-yebushou`（分支 `xiaochang` = 校场）/ `shence-docs`。
+4. 命名定稿：项目群 **神策**；仓库 `shence-hufu` / `shence-jintuo` / `shence-jisi` / `shence-yebushou`（分支 `xiaochang` = 校场）/ `shence-junji`。

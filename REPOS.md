@@ -7,7 +7,7 @@
 
 | 仓库 | 项目 | 形态 | 首期内容 |
 |---|---|---|---|
-| `shence-docs` | 中枢文档 | 文档 | 章程（PROJECTS.md 迁入）、ADR、跨仓接口约定、验证报告归档 |
+| `shence-junji` | 中枢文档 | 文档 | 章程（PROJECTS.md 迁入）、ADR、跨仓接口约定、验证报告归档 |
 | `shence-hufu` | 虎符 P1 | DSH 插件 | 槽位状态机、工作项账本、心跳、恢复协议 |
 | `shence-jintuo` | 金柝 P2 | 独立启动器+补丁 | dsh-daemon 增强版、资源告警、崩溃恢复、DSH patch overlay |
 | `shence-jisi` | 集思 P3 | DSH 插件 | 派单通道（按次模型）、多模型并行收集、主 agent 自换模型门禁 |
@@ -15,7 +15,7 @@
 
 ## 各仓 README 骨架（建仓时直接贴）
 
-### shence-docs/README.md
+### shence-junji/README.md
 ```
 # 神策（SHENCE）
 > 蜂群式 AI 渗透与 CTF 作战体系。理念：正交→独立项目（允许依赖），包含/继承→同项目分支；不干涉 AI、不教 AI 做事。
@@ -78,20 +78,20 @@ DSH 插件。派单通道：派活(工作描述, 模型?, 工具集?)→durable 
 
 | 来源（Tsecbench/recon/） | 去向 |
 |---|---|
-| PROJECTS.md（章程） | shence-docs/ |
-| HOSTED-COMPONENT-DESIGN.md、ARCH-*.md、PARALLEL-ARCHITECTURE.md | shence-docs/ADR/ |
+| PROJECTS.md（章程） | shence-junji/ |
+| HOSTED-COMPONENT-DESIGN.md、ARCH-*.md、PARALLEL-ARCHITECTURE.md | shence-junji/ADR/ |
 | RECOVERY.md（含 daemon 修复记录） | shence-jintuo/docs/ |
 | dsh-daemon.sh 改动、.wslconfig 说明 | shence-jintuo/ |
 | HOSTED-AGENT-PROMPT.md 的调度通用部分（状态机/心跳/去重） | shence-hufu/docs/ |
 | HOSTED-AGENT-PROMPT.md 的渗透/CTF 打法（35 条经验） | shence-yebushou/（xiaochang 分支再分平台/私知） |
 | public-corpus/（公开资料库） | shence-yebushou@xiaochang/data/ |
 | SOLUTIONS.md、DEAD-ENDS.md、各 run 报告（含题解/旗值） | shence-yebushou@xiaochang/local/（本地私知，不进托管打包） |
-| HOSTED-VALIDATION-S1/XBOW-VALIDATION/CYBENCH-VALIDATION.md | shence-docs/VALIDATION/ |
+| HOSTED-VALIDATION-S1/XBOW-VALIDATION/CYBENCH-VALIDATION.md | shence-junji/VALIDATION/ |
 | ONBOARDING.md、ACCESS.md、challenges-api.md（平台 API 知识） | shence-yebushou@xiaochang/adapters/tsecbench/ |
 
 ## 建仓后第一步（各仓顺序）
 
-1. `shence-docs`：迁章程与验证报告，生成仓库地图。
+1. `shence-junji`：迁章程与验证报告，生成仓库地图。
 2. `shence-hufu`：从验证期协议提炼槽位状态机与账本设计（ADR-001）。
 3. `shence-jisi`：定义通道最小契约（ADR-002，被虎符引用）。
 4. `shence-jintuo`：迁 dsh-daemon 增强与补丁 overlay。

@@ -43,7 +43,7 @@
 
 ## 3. 自治测试回路（脱手协议）
 
-- 一切测试通过**脚本**执行：`bash shence-docs/scripts/run-test.sh <level> <case>` 风格入口，产出结构化结果文件（exit code + JSON 报告）。
+- 一切测试通过**脚本**执行：`bash shence-junji/scripts/run-test.sh <level> <case>` 风格入口，产出结构化结果文件（exit code + JSON 报告）。
 - 驱动方式：本会话用 bash 后台任务调 dev 实例 headless CLI；每次调用一个受控实验。
 - 崩溃不传染：dev 进程死了 → 后台任务退出 → 我读 dev 日志/结果文件定责；生产实例不感知。
 - 长测试保活：沿用验证期心跳模式（90s 必退出后台任务）。
@@ -69,7 +69,7 @@
 2. L1 插件在 dev 实例挂载冒烟通过；
 3. L2 迷你战役端到端通过；
 4. L3 混沌 5 轮通过（含生产实例无感断言）；
-5. 打 tag + 更新 shence-docs 验收记录。
+5. 打 tag + 更新 shence-junji 验收记录。
 
 顺序：集思（通道契约）→ 虎符（状态机）→ 金柝（混沌自测）→ 夜不收（经验格式 + 适配器 + 治理扫描）。
 
